@@ -4,7 +4,7 @@ function addListItem(){
   $("#new-todo").val('What\'s next');
 }
 $(function() {
-    $("#btn-add").keypress("click", addListItem);
+    $("#btn-add").on("click", addListItem);
 
 });
 
