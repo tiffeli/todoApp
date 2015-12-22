@@ -1,6 +1,39 @@
-
-#eachitem {
-  color: 66FFCC;
+title {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+    margin-right: auto;
+    width: 6em
 }
+h1{
+  color: #ff9999;
+  font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 26.4px;
+}
+#eachitem {
+  color: black;
+}
+input{
+  height:26px;
+  font-size:12pt;
+  font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 26.4px;
+}
+ul{
+  background: #ff9999;
+  padding: 20px;
+}
+li{
+  background:#ffe5e5;
+}
+button{
 
+}
 
