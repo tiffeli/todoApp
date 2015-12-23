@@ -5,10 +5,6 @@ function addListItem(){
 }
 $(function() {
     $("#btn-semi-transparent").on("click", addListItem);
-    var placeholder = $(this).attr('placeholder');
-    $(this).on("mouseover", function(){
-      $("placeholder").hide();
-    });
 
 });
 
