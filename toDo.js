@@ -4,9 +4,11 @@ function addListItem(){
     text+" <button class='delete'> Delete </button></li>");
   $("#new-todo").val(' ');
 }
+
 function deleteItem() {
  $(this).parent().remove();
 }
+
 function checkOff() {
   if( $(this).parent().css('textDecoration') === 'line-through'){
       $(this).parent().css('textDecoration', 'none');
