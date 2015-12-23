@@ -14,11 +14,7 @@ h1{
     font-weight: 500;
     line-height: 26.4px;
 }
-#eachitem {
-  color: black;
-  font-size: 20px;
-  font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
-}
+
 input{
   height:26px;
   font-size:18px;
@@ -34,6 +30,9 @@ ul{
 }
 li{
   background:#ffe5e5;
+  color: black;
+  font-size: 20px;
+  font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
 }
 button{
 
