@@ -1,7 +1,7 @@
 function addListItem(){
   var text = $("#new-todo").val();
-  var list = $("#todo-list").append("<li><input type='checkbox' class='done' />" +
-    text+" <button class='delete'> Delete </button></li>");
+  var list = $("#todolist").append('<li><input type="checkbox" class="done" />' +
+    text+' <button class="delete"> Delete </button></li>');
   $("#new-todo").val(' ');
 }
 
@@ -18,11 +18,13 @@ function checkOff() {
 }
 
 $(document).ready(function() {
-    $("#btn-semi-transparent").on("click", addListItem);
+    $("#btn-semi-transparent").on('click', addListItem);
 
-    $(".delete").on("click",deleteItem);
-    $(".done").on("click", checkOff);
-});
+    $(".delete").on('click',deleteItem);
+    $(".done").on('click', checkOff);
+    $(document).on('click', '.done', checkOff);
+    $(document).on('click', '.delete',deleteItem);
+  });
 // function handle(e){
     //     if(e.keyCode === 13){
     //         alert("Enter was pressed was presses");
