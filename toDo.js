@@ -20,8 +20,6 @@ function checkOff() {
 $(document).ready(function() {
     $("#btn-semi-transparent").on('click', addListItem);
 
-    $(".delete").on('click',deleteItem);
-    $(".done").on('click', checkOff);
     $(document).on('click', '.done', checkOff);
     $(document).on('click', '.delete',deleteItem);
   });
