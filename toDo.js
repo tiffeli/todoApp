@@ -1,6 +1,6 @@
 function addListItem(){
   var text = $("#new-todo").val();
-  var list = $("#todolist").append('<li><input type="checkbox" class="done" />' +
+  var list = $("#todolist").append('<li class="listed"><input type="checkbox" class="done" />' +
     text+' <button class="delete"> Delete </button></li>');
   $("#new-todo").val(' ');
 }
@@ -15,13 +15,36 @@ function checkOff() {
   } else {
   $(this).parent().css('textDecoration', 'line-through');
   }
+  // $(this).parent().toggle();
 }
 
-$(document).ready(function() {
-    $("#btn-semi-transparent").on('click', addListItem);
+function updateItem(){
+      function focusFunction(){
+        if (this.value === content) {this.value = '';}
+}
+  var content = $(this).text();
+ $(this).html('<input id="update" value=' + content + ' onfocus="focusFunction()" onblur="blurFunction()"/>');
+ var updateInput = document.getElementById("update");
 
+}
+$(document).ready(function() {
+  var listedItem = document.getElementById('new-todo');
+  listedItem.onkeyup = function(event){
+    if(event.which === 13){
+      var item = listedItem.value;
+      if(!item || item === "" || item === " "){
+        return false;
+      }
+      addListItem;
+    }
+  };
+    $("#btn-semi-transparent").on('click', addListItem);
+// $('.done').on
     $(document).on('click', '.done', checkOff);
     $(document).on('click', '.delete',deleteItem);
+    $(document).on('click','.listed',updateItem);
+    updateInput.focus();
+
   });
 // function handle(e){
     //     if(e.keyCode === 13){
