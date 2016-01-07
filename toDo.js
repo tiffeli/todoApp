@@ -1,7 +1,7 @@
 function addListItem(){
   var text = $("#new-todo").val();
-  var list = $("#todolist").append('<li class="listed"><input type="checkbox" class="done" />' +
-    text+' <button class="delete"> Delete </button></li>');
+  var list = $("#todolist").append('<li class="listed"><input type="checkbox" class="done" /><span id="text">' +
+    text+'</span> <button class="delete"> Delete </button><button class="edit" onclick="updateInput()" >Edit</button></li>');
   $("#new-todo").val(' ');
 }
 
@@ -18,34 +18,40 @@ function checkOff() {
   // $(this).parent().toggle();
 }
 
-function updateItem(){
-      function focusFunction(){
-        if (this.value === content) {this.value = '';}
+function updateInput(){
+  var updateText = prompt("Change this item?");
+  $(this).parent().text(updateText);
 }
-  var content = $(this).text();
- $(this).html('<input id="update" value=' + content + ' onfocus="focusFunction()" onblur="blurFunction()"/>');
- var updateInput = document.getElementById("update");
+// function updateItem(){
+//       function focusFunction(){
+//         if (this.value === content) {this.value = '';}
+// }
+//   var content = $(this).text();
+//  $(this).html('<input id="update" value=' + content + ' onfocus="focusFunction()" onblur="blurFunction()"/>');
+//  var updateInput = document.getElementById("update");
 
-}
+// }
 $(document).ready(function() {
-  var listedItem = document.getElementById('new-todo');
-  listedItem.onkeyup = function(event){
-    if(event.which === 13){
-      var item = listedItem.value;
-      if(!item || item === "" || item === " "){
-        return false;
-      }
-      addListItem;
-    }
-  };
     $("#btn-semi-transparent").on('click', addListItem);
 // $('.done').on
     $(document).on('click', '.done', checkOff);
     $(document).on('click', '.delete',deleteItem);
     $(document).on('click','.listed',updateItem);
-    updateInput.focus();
+    $(document).on('click', '.edit', updateInput);
+
 
   });
+
+  // var listedItem = document.getElementById('new-todo');
+  // listedItem.onkeyup = function(event){
+  //   if(event.which === 13){
+  //     var item = listedItem.value;
+  //     if(!item || item === "" || item === " "){
+  //       return false;
+  //     }
+  //     addListItem;
+  //   }
+  // };
 // function handle(e){
     //     if(e.keyCode === 13){
     //         alert("Enter was pressed was presses");
