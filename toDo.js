@@ -1,7 +1,7 @@
 function addListItem(){
   var text = $("#new-todo").val();
   var list = $("#todolist").append('<li class="listed"><input type="checkbox" class="done" /><span id="text">' +
-    text+'</span> <button class="delete"> Delete </button><button onclick="updateInput()" class="edit"  >Edit</button></li>');
+    text+'</span> <button class="delete"> Delete </button><button onclick="updateInput(this.parentNode)" class="edit"  >Edit</button></li>');
   $("#new-todo").val(' ');
 }
 
@@ -17,19 +17,11 @@ function checkOff() {
   }
   // $(this).parent().toggle();
 }
-// function edit (node){
-//     //1: Call the prompt. node.firstChild.innerHTML gets the value of the listed element (that is now inside a <span>)
-//       var newText = prompt("Change this item?",node.secondChild.innerHTML);
-//       //2: Modify the value of the first child of "node", that is the <span> tag.
-//       node.secondChild.innerHTML = newText;
 
-// }
-function updateInput(){
+function updateInput(node){
   var updateText = prompt("Change this item?");
-  $(this).closest('span').html('<span id="text">'+ updateText + '</span>');
-  // document.getElementById("text").innerHTML = updateText; // works but only for first element
-  $(this).parent().text(updateText);
-  alert(this);
+
+  node.childNodes[1].innerHTML = updateText;
 }
 // function updateItem(){
 //       function focusFunction(){
